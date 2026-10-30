@@ -1,0 +1,695 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav a.menu-ativo {
+    color: #c98995;
+}
+
+nav a.menu-ativo::after {
+    width: 100%;
+}
+
+
+.banner-produtos {
+    width: 100%;
+    height: 38vh;
+    background: #f4ece7;
+    overflow: hidden;
+}
+
+.banner-produtos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.filtros-produtos {
+    width: 86%;
+    min-height: 8vh;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vw;
+}
+
+.categorias {
+    display: flex;
+    align-items: center;
+    gap: 2.5vw;
+}
+
+.categorias button,
+.ordenar button {
+    border: none;
+    background: #e8c9cb;
+    color: #333;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5vh;
+
+    padding: 1vh 2vw;
+    border-radius: 30px;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: all 0.3s ease;
+}
+
+.categorias .categoria-ativa {
+    background: #c98995;
+    color: white;
+}
+
+.categorias button:hover,
+.ordenar button:hover {
+    background: #c98995;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(201, 137, 149, 0.25);
+}
+
+.categorias button:active,
+.ordenar button:active {
+    transform: scale(0.95);
+}
+
+
+
+.ordenar {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.ordenar span {
+    font-size: 1.5vh;
+    color: #333;
+}
+
+.ordenar button {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.ordenar button i {
+    font-size: 1.5vh;
+}
+
+
+
+.produtos {
+    width: 86%;
+    margin: 0 auto 6vh;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    column-gap: 3vw;
+    row-gap: 5vh;
+}
+
+
+
+.produto {
+    width: 100%;
+    min-width: 0;
+    cursor: pointer;
+}
+
+
+
+.imagem-produto {
+    width: 100%;
+    height: 38vh;
+
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.3vh;
+}
+
+.imagem-produto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.produto:hover .imagem-produto img {
+    transform: scale(1.05);
+}
+
+
+
+.mais-vendido {
+    position: absolute;
+    top: 1.5vh;
+    left: 1vw;
+
+    background: #c98995;
+    color: white;
+
+    font-size: 1.2vh;
+    padding: 0.6vh 1vw;
+    border-radius: 10px;
+}
+
+
+
+.favorito {
+    position: absolute;
+    top: 1.5vh;
+    right: 1vw;
+
+    color: white;
+    font-size: 2vh;
+
+    transition: all 0.3s ease;
+}
+
+.favorito:hover {
+    color: #c98995;
+    transform: scale(1.2);
+}
+
+
+.produto h3 {
+    margin-top: 1.5vh;
+
+    font-size: 2.2vh;
+    font-weight: 600;
+
+    color: #333;
+}
+
+
+
+.avaliacao {
+    display: flex;
+    align-items: center;
+
+    gap: 0.8vw;
+    margin-top: 0.8vh;
+}
+
+.avaliacao span {
+    color: #c98995;
+    font-size: 1.9vh;
+    letter-spacing: 1px;
+}
+
+.avaliacao small {
+    color: #555;
+    font-size: 1.5vh;
+}
+
+
+
+.preco {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 0.8vw;
+    margin-top: 1.2vh;
+}
+
+.preco strong {
+    color: #c4a17b;
+    font-size: 2.2vh;
+    font-weight: 700;
+}
+
+
+
+.preco button {
+    border: none;
+
+    background: #d9c0a1;
+    color: white;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5vh;
+    font-weight: 600;
+
+    padding: 1.2vh 1.3vw;
+    border-radius: 25px;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: all 0.3s ease;
+}
+
+.preco button:hover {
+    background: #c98995;
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 12px rgba(201, 137, 149, 0.3);
+}
+
+.preco button:active {
+    transform: scale(0.95);
+}
+
+.preco button i {
+    margin-left: 0.4vw;
+}
+
+
+
+footer {
+    width: 100%;
+    min-height: 16vh;
+
+    margin-top: 0;
+
+    padding: 1.5vh 6vw;
+
+    background: #FAF3EC;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 2vw;
+}
+
+.logo-footer {
+    height: 7vh;
+    width: auto;
+    object-fit: contain;
+}
+
+footer h4 {
+    margin: 0 0 0.8vh;
+
+    font-size: 1.2vh;
+    font-weight: 700;
+    color: #333;
+}
+
+footer p {
+    margin: 0.3vh 0;
+
+    font-size: 1vh;
+    color: #333;
+}
+
+.footer-marca {
+    width: 25%;
+}
+
+.footer-marca > p {
+    display: inline-block;
+    vertical-align: middle;
+
+    max-width: 8vw;
+    margin-left: 0.5vw;
+}
+
+.redes-sociais {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+
+    margin-top: 0.8vh;
+}
+
+.redes-sociais a {
+    color: #c98995;
+    font-size: 1.5vh;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.redes-sociais a:hover {
+    color: #b77582;
+    transform: translateY(-2px);
+}
+
+.footer-informacoes {
+    width: 28%;
+}
+
+.footer-informacoes p i {
+    width: 1vw;
+    color: #c98995;
+}
+
+.footer-links {
+    width: 12%;
+
+    border-right: 1px solid #c9bdb6;
+    min-height: 10vh;
+}
+
+footer .footer-links a {
+    color: #333;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: #c98995;
+}
+
+.footer-novidades {
+    width: 22%;
+}
+
+.form-novidades {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 3.5vh;
+
+    background: #c98995;
+    border-radius: 30px;
+
+    overflow: hidden;
+}
+
+footer .form-novidades input {
+    width: 85%;
+    height: 100%;
+
+    padding: 0 1vw;
+
+    border: none;
+    outline: none;
+
+    background: #d9c0a1;
+    color: #333;
+
+    border-radius: 30px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1vh;
+}
+
+footer .form-novidades input::placeholder {
+    color: #c98995;
+}
+
+footer .form-novidades button {
+    width: 15%;
+    height: 100%;
+
+    border: none;
+    background: #c98995;
+    color: white;
+
+    cursor: pointer;
+}
+
+footer .form-novidades button:hover {
+    background: #b77582;
+}
+
+footer .direitos {
+    margin-top: 1vh;
+    font-size: 0.9vh;
+}
+
+
+
+@media (max-width: 900px) {
+
+    .pagina-contatos {
+        width: 90%;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 3vw;
+    }
+
+    .campos-superiores {
+        gap: 2vw;
+    }
+
+    .formulario-contato button {
+        width: 25vw;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        gap: 3vh 3vw;
+    }
+
+    .footer-marca,
+    .footer-informacoes,
+    .footer-links,
+    .footer-novidades {
+        width: 45%;
+    }
+
+    .footer-marca > p {
+        max-width: 20vw;
+    }
+
+    .footer-links {
+        border-right: none;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    .banner-contatos {
+        height: 25vh;
+    }
+
+    .pagina-contatos {
+        width: 90%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 2vh;
+        padding: 3vh 0;
+    }
+
+    .informacoes-contato h1 {
+        font-size: 2.8vh;
+    }
+
+    .item-contato {
+        gap: 3vw;
+        margin-bottom: 2vh;
+    }
+
+    .item-contato > i {
+        width: 6vw;
+        font-size: 2.5vh;
+    }
+
+    .item-contato h3 {
+        font-size: 1.8vh;
+    }
+
+    .item-contato p {
+        font-size: 1.4vh;
+    }
+
+    .campos-superiores {
+        grid-template-columns: 1fr;
+        gap: 1vh;
+    }
+
+    .formulario-contato input,
+    .formulario-contato textarea {
+        font-size: 1.4vh;
+        padding: 1.5vh 3vw;
+    }
+
+    .formulario-contato input::placeholder,
+    .formulario-contato textarea::placeholder {
+        font-size: 1.3vh;
+    }
+
+    .formulario-contato input {
+        height: 5vh;
+    }
+
+    .formulario-contato textarea {
+        height: 12vh;
+    }
+
+    .formulario-contato button {
+        width: 55vw;
+        height: 5vh;
+
+        font-size: 1.4vh;
+    }
+
+    footer {
+        padding: 3vh 5vw;
+        gap: 3vh 4vw;
+    }
+
+    .footer-marca,
+    .footer-informacoes,
+    .footer-links,
+    .footer-novidades {
+        width: 100%;
+    }
+
+    .logo-footer {
+        height: 8vh;
+    }
+
+    footer h4 {
+        font-size: 1.5vh;
+    }
+
+    footer p {
+        font-size: 1.3vh;
+    }
+
+    .footer-marca > p {
+        max-width: 45vw;
+    }
+
+    .redes-sociais a {
+        font-size: 2vh;
+    }
+
+    .footer-novidades {
+        max-width: 100%;
+    }
+
+    .form-novidades {
+        height: 4.5vh;
+    }
+
+    footer .form-novidades input {
+        font-size: 1.3vh;
+    }
+
+    footer .direitos {
+        font-size: 1.1vh;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .filtros-produtos {
+        flex-wrap: wrap;
+        padding: 2vh 0;
+    }
+
+    .categorias {
+        flex-wrap: wrap;
+        gap: 1vh 2vw;
+    }
+
+    .produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 3vh 4vw;
+    }
+
+    .imagem-produto {
+        height: 32vh;
+    }
+
+    .produto h3 {
+        font-size: 2vh;
+    }
+
+    .avaliacao span {
+        font-size: 1.8vh;
+    }
+
+    .avaliacao small {
+        font-size: 1.4vh;
+    }
+
+    .preco {
+        flex-wrap: wrap;
+    }
+
+    .preco strong {
+        font-size: 2vh;
+    }
+
+    .preco button {
+        font-size: 1.4vh;
+        padding: 1vh 1.5vw;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .filtros-produtos {
+        width: 90%;
+    }
+
+    .produtos {
+        width: 90%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 4vw;
+        row-gap: 3vh;
+    }
+
+    .categorias button,
+    .ordenar button {
+        font-size: 12px;
+    }
+
+    .imagem-produto {
+        height: 25vh;
+    }
+
+    .produto h3 {
+        font-size: 1.8vh;
+    }
+
+    .avaliacao {
+        gap: 1vw;
+    }
+
+    .avaliacao span {
+        font-size: 1.6vh;
+    }
+
+    .avaliacao small {
+        font-size: 1.2vh;
+    }
+
+    .preco {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1vh;
+    }
+
+    .preco strong {
+        font-size: 2vh;
+    }
+
+    .preco button {
+        width: 100%;
+        font-size: 1.4vh;
+        padding: 1.2vh 1vw;
+    }
+}
